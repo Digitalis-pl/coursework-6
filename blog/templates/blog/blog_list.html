@@ -1,0 +1,35 @@
+{% extends 'newsletter_app/base/outside_base.html' %}
+{% load my_tags %}
+<main class="container">
+{% block content %}
+{% if perms.blog.add_blog %}
+<div class="dropdown mt-5 me-3 bd-mode-toggle position-absolute top-0 end-0">
+
+    <a class="btn btn-primary" href="{% url 'blog:blog_create' %}" role="button">Добавить статью</a>
+
+</div>
+{% endif %}
+<div class="container d-flex " style="flex-wrap: wrap; justify-content: space-around">
+    {% for object in object_list %}
+    <div class="content col-3 mt-4 ms-1 me-1 border border-secondary rounded-3" style="overflow: hidden">
+        <div class="content__header bg-secondary">
+            <img width="100%"  src="{{ object.photo | media_filter }}">
+        </div>
+        <div class="main__content ms-1">
+            <h3>{{ object.title }}</h3><hr>
+            <p>{{ object.content | only_60 }}</p>
+
+        </div>
+        <div class="content__footer ms-1">
+            <a href="{% url 'blog:blog_detail' object.pk %}">Просмотреть</a>
+            {% if perms.blog.delete_blog and perms.blog.change_blog %}
+            <a href="{% url 'blog:blog_update' object.pk %}">Изменить</a>
+            <a href="{% url 'blog:blog_delete' object.pk %}">Удалить</a>
+            {% endif %}
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+</main>
+{% endblock %}

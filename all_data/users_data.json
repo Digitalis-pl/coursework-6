@@ -1,0 +1,82 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$qt3BO9BfQZFcHRuiFGrJdC$gHxh8li+7trmGMWTEOoL9UpOCRr4CK/FWLB4CUMR+JM=",
+      "last_login": "2024-06-28T22:23:51.237Z",
+      "is_superuser": true,
+      "first_name": "Степан",
+      "last_name": "Степанович",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-15T17:03:03Z",
+      "email": "admin02@mail.ru",
+      "phone": "89655763441",
+      "avatar": "",
+      "token": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$dqQHsskRPRlx5aAnRanVio$a3ROiMIcL7e8hmYk7auZRLrjdhYmUGv45Judz9PHBPY=",
+      "last_login": "2024-06-21T09:11:25Z",
+      "is_superuser": false,
+      "first_name": "Дмитрий",
+      "last_name": "Дмитриевич",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-21T07:01:47Z",
+      "email": "user1@mail.ru",
+      "phone": null,
+      "avatar": "",
+      "token": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$M9LCl7n7UuUQMIMQFp5ElJ$wWuC1k81+TpkRM9rmKHgIlgWiKK1wtv5wTOuI5bLhIc=",
+      "last_login": "2024-06-28T22:19:50.550Z",
+      "is_superuser": false,
+      "first_name": "Иван",
+      "last_name": "Иванович",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-22T07:49:05Z",
+      "email": "manager@mail.ru",
+      "phone": null,
+      "avatar": "",
+      "token": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$CryL5AGBcTv754Uk7VQF62$3WkQmKvh5QNNOKfzKd/9rNKfiFiyUY81j2uaRFV5n/w=",
+      "last_login": "2024-06-28T13:22:08.632Z",
+      "is_superuser": false,
+      "first_name": "Ростислав",
+      "last_name": "Ростиславович",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-28T13:12:55Z",
+      "email": "contentmanager@mail.ru",
+      "phone": null,
+      "avatar": "",
+      "token": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

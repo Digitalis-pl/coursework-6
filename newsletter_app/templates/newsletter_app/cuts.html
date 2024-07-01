@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="table">
+                <table class="table table-dark table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ФИО</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row"></th>
+                        <td><a href="#">{{ object.name }} {{ object.last_name }} {{ object.surname }}</a></td>
+                        <td><a href="#">{{ object.contact_email }}</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <table class="table mb-0 align-middle">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Комментарий</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td width="100">
+                                        {{ object.comment }}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex justify-content-between card-header py-3">
+                <a class="btn w-100 btn btn-lg btn-outline-primary"
+                   href="{% url 'newsletter_app:client_update' object.pk %}" role="button">Изменить</a>
+                <a class="btn w-100 btn btn-lg btn-outline-primary"
+                   href="{% url 'newsletter_app:client_delete' object.pk %}" role="button">Удалить</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{% extends 'newsletter_app/base/inside_base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="border border-secondary rounded-3" style="max-height: 90vh;">
+    <div class="container d-flex "
+         style="flex-wrap: wrap; justify-content: space-around; overflow: auto; max-height: 83vh;">
+        {% for object in object_list %}
+        <div class="content col-3 mt-3 mb-3 ms-1 me-1 border border-secondary rounded-3" style="overflow: auto">
+            <div class="content__header bg-secondary">
+                <img src="#">
+            </div>
+            <div class="main__content ms-1">
+                <h3>{{ object.id }}</h3>
+                <p>{{ object.first_send_date }}</p>
+                <hr>
+                <p>{{ object.period }}</p>
+                <hr>
+                {% if object.status == 'created' %}
+                <a class="btn btn-secondary" href="{% url 'newsletter_app:status_button' object.pk %}"><p>Запустить</p></a>
+                {% endif %}
+                {% if object.status == 'finished' %}
+                <a class="btn btn-secondary" href="{% url 'newsletter_app:newsletter_update' object.pk %}"><p>Изменить рассылку</p></a>
+                {% endif %}
+                {% if object.status == 'started' %}
+                <a class="btn btn-primary" href="{% url 'newsletter_app:status_button' object.pk %}"><p>Остановить</p></a>
+                {% endif %}
+                <hr>
+                <p>{{ object.message }}</p>
+                <hr>
+                {% for client in object.clients.all %}
+                <p>{{ client.id }} {{ client.name }} {{ client.last_name }}, </p>
+                {% endfor %}
+            </div>
+            <div class="content__footer ms-1">
+                <a href="{% url 'newsletter_app:newsletter_detail' object.pk %}">Просмотреть</a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'newsletter_app/base/outside_base.html' %}
+{% block content %}
+<div class="row mt-5 mb-5 pb-5 text-center">
+    <div class="col-12">
+        <form class="row" method="post" enctype="multipart/form-data">
+            <div class="card">
+                <div class="card-body">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary mt-2 mb-2">
+                    {% if object %}
+                    Сохранить
+                    {% else %}
+                    Создать
+                    {% endif %}
+                </button>
+                 {% if object %}
+                <a class="btn btn-primary mt-2 mb-2" href="{% url 'blog:blog_list' %}">К статьям</a>
+                  {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

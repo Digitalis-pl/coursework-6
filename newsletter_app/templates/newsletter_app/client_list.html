@@ -1,0 +1,31 @@
+{% extends 'newsletter_app/base/inside_base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col" style="overflow: auto; max-height: 90vh;">
+            <table class="table table-dark table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">ФИО</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Комментарий</th>
+                </tr>
+                </thead>
+                {% for object in object_list %}
+                <tbody>
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td><a href="{% url 'newsletter_app:client_detail' object.pk %}">{{ object.name }} {{ object.last_name }} {{ object.surname }}</a></td>
+                    <td><a href="{% url 'newsletter_app:client_detail' object.pk %}">{{ object.contact_email }}</a></td>
+                    <td class="w-25"><a href="{% url 'newsletter_app:client_detail' object.pk %}"><span class="d-inline-block text-truncate" style="max-width: 150px;">{{ object.comment }}</span></a></td>
+                </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

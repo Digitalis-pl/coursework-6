@@ -1,0 +1,22 @@
+{% extends 'newsletter_app/base/inside_base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="container d-flex " style="flex-wrap: wrap; justify-content: space-around">
+    {% for object in object_list %}
+            <div class="content col-3 mt-4 ms-1 me-1 border border-secondary rounded-3" style="overflow: hidden">
+                <div class="content__header bg-secondary">
+                    <img src="#">
+                </div>
+                <div class="main__content ms-1">
+                    <h3>{{ object.subject }}</h3>
+                    <p>{{ object.body | only_60 }}</p>
+                </div>
+                <div class="content__footer ms-1">
+                    <a href="{% url 'newsletter_app:message_detail' object.pk %}">Просмотреть</a>
+                </div>
+
+            </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

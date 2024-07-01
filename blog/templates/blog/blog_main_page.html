@@ -1,0 +1,33 @@
+{% extends 'newsletter_app/base/outside_base.html' %}
+{% load my_tags %}
+<main class="container">
+    {% block content %}
+<div class="dropdown mt-5 me-3 bd-mode-toggle position-absolute top-0 end-0">
+    <a class="btn btn-primary" href="{% url 'blog:blog_list' %}" role="button">Все статьи</a>
+</div>
+    <div class="container d-flex " style="flex-wrap: wrap; justify-content: space-around">
+        {% for object in some_another_articles %}
+        <div class="content col-3 mt-4 ms-1 me-1 border border-secondary rounded-3" style="overflow: hidden">
+            <div class="content__header bg-secondary">
+                <img width="100%" src="{{ object.photo | media_filter }}">
+            </div>
+            <div class="main__content ms-1">
+                <h3>{{ object.title }}</h3>
+                <hr>
+                <p>{{ object.content | only_60 }}</p>
+            </div>
+            <a href="{% url 'blog:blog_detail' object.pk %}">Просмотреть</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="content mt-3 ">
+        <div class="content__header bg-secondary border border-secondary rounded-3 pt-2 pb-2 ps-2 pe-2">
+            <img width="100%" src="{{ popular_article.photo | media_filter }}">
+        </div>
+        <h3>{{ popular_article.title }}</h3>
+        <p>{{ popular_article.view_counter }}</p>
+        <hr>
+        <p>{{ popular_article.content }}</p>
+    </div>
+</main>
+{% endblock %}

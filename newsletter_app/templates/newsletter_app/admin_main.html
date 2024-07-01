@@ -1,0 +1,89 @@
+{% extends 'newsletter_app/base/inside_base.html' %}
+{% block content %}
+<div class="mb-5">
+   <nav id="navbar-example2" class="navbar navbar-dark bg-dark px-3">
+     <a class="navbar-brand" href="#">Новости</a>
+     <ul class="nav nav-pills">
+       <li class="nav-item">
+         <a class="nav-link" href="#scrollspyHeading1">Первый</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="#scrollspyHeading2">Второй</a>
+       </li>
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Выпадающий список</a>
+         <ul class="dropdown-menu">
+           <li><a class="dropdown-item" href="#scrollspyHeading3">Третий</a></li>
+           <li><a class="dropdown-item" href="#scrollspyHeading4">Четвертый</a></li>
+           <li><hr class="dropdown-divider"></li>
+           <li><a class="dropdown-item" href="#scrollspyHeading5">Пятый</a></li>
+         </ul>
+       </li>
+     </ul>
+   </nav>
+  <div>
+    <a href="{% url 'newsletter_app:newsletter_list' %}">Всего рассылок: {{ all_newsletter }}</a>
+    <a href="{% url 'newsletter_app:newsletter_list' %}">Активные рассылки: {{ active_newsletter }}</a>
+    <a href="{% url 'newsletter_app:client_list' %}">Количество клиентов: {{ clients }}</a>
+  </div>
+   <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example container py-3" style="overflow: auto; max-height: 90vh;" tabindex="0">
+     <h4 id="scrollspyHeading1">Кукла колдуна.</h4>
+         <p class="text-center">
+           Тёмный, мрачный коридор<br>
+           Я на цыпочках, как вор<br>
+           Пробираюсь, чуть дыша<br>
+           Чтобы не спугнуть<br>
+           Тех, кто спит уже давно<br>
+           Тех, кому не всё равно<br>
+           В чью я комнату тайком<br>
+           Желаю заглянуть<br>
+           Чтобы увидеть…<br>
+
+           Как бессонница в час ночной<br>
+           Меняет, нелюдимая, облик твой<br>
+           Чьих, невольница, ты идей?<br>
+           Зачем тебе охотиться на людей?<br>
+
+           Крестик на моей груди<br>
+           На него ты погляди<br>
+           Что в тебе способен он<br>
+           Резко изменить?<br>
+           Много книжек я читал<br>
+           Много фокусов видал<br>
+           Свою тайну от меня<br>
+           Не пытайся скрыть!<br>
+           Я это видел!<br>
+           Как бессонница в час ночной<br>
+           Меняет, нелюдимая, облик твой<br>
+           Чьих, невольница, ты идей?<br>
+           Зачем тебе охотиться на людей?<br>
+
+           Очень жаль, что ты тогда<br>
+           Мне поверить не смогла<br>
+           В то, что новый твой приятель<br>
+           Не такой, как все!<br>
+           Ты осталась с ним вдвоём<br>
+           Не зная ничего о нём<br>
+           Что для всех опасен он<br>
+           Наплевать тебе!<br>
+           И ты попала!<br>
+
+           К настоящему колдуну<br>
+           Он загубил таких, как ты, не одну!<br>
+           Словно куклой, в час ночной<br>
+           Теперь он может управлять тобой!<br>
+
+           Всё происходит, будто в страшном сне<br>
+           И находиться здесь опасно мне!<br>
+         </p>
+     <h4 id="scrollspyHeading2">Второй заголовок</h4>
+     <p>...</p>
+     <h4 id="scrollspyHeading3">Третий заголовок</h4>
+     <p>...</p>
+     <h4 id="scrollspyHeading4">Четвертый заголовок</h4>
+     <p>...</p>
+     <h4 id="scrollspyHeading5">Пятый заголовок</h4>
+     <p>...</p>
+   </div>
+</div>
+{% endblock %}
